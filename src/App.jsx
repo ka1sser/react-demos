@@ -1,35 +1,52 @@
 import React from 'react';
 import "./index.css";
-import { FaShoppingCart } from "react-icons/fa";
-import StyledCard from './components/StyledCard';
-import ProfileCard from './components/ProfileCard';
+
+const Button = () => {
+
+  const handleClick = () => console.log("THAT TICKLES!")
+
+  return (
+    <button 
+      className='bg-linear-to-r from-green-200 to-amber-100 w-[100px] h-auto p-1 rounded-[10px]'
+      onClick={handleClick}
+    >  
+      CLICK ME
+    </button>
+  )
+}
+
+const Copy = () =>{
+  const copyHandler = () => {
+    console.log("First, I will file a complaint."+
+    "The processing will take 3 days. After that, if approved, I can move my report to our supervisor."+
+    "It will take 2 more days, and if approve, you will be warned by them. So yeah, try to copy my content.")
+  }
+
+  return(
+    <p onCopy={copyHandler}>TRY TO COPY THIS TEXT AND SEE WHAT I'LL DO TO YOU.</p>
+  )
+}
+
+const Move = () => {
+
+  function moveHandler(){
+    alert("THE MOUSE TOUCHED ME!!!")
+  }
+
+  return(
+    <p className='border-3 border-blue-400' onMouseMove={moveHandler}>
+      TOUCH ME. I DARE YOU!
+    </p>
+  )
+}
 
 const App = () => {
 
   return (
     <div>
-      <StyledCard 
-       title={"Front End Developer"}
-       description={"Capable of designing a website from UI/UX to its overall look and structure."}
-       location={"New Zealand"}
-      />
-      <StyledCard 
-       title="Game Developer"
-       description="Candidate will become responsible in game design and programming the game using the Unity game engine."
-       location="Netherlands"
-      />
-
-      <ProfileCard
-        card={"Torterra EX"}
-        rarity={"Full Art EX"}
-        price={5.55}
-      />
-      <ProfileCard
-        card={"Walking Wake EX"}
-        rarity={"Full Art EX"}
-        price={10}
-      />
-
+      <Button />
+      <Copy />
+      <Move/>
     </div>
   )
 }
