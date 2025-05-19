@@ -1,12 +1,13 @@
 import React from 'react'
-import Greeting from './components/Greeting';
+import UserList from './components/UserList';
 import ProductInfo from './components/ProductInfo';
 
 const App = () => {
+
   return (
     <>
-      <div><Greeting/></div>
-      <div><ProductInfo/></div>
+      <UserList/>
+      <ProductInfo/>
     </>
   )
 }
