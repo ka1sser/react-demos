@@ -1,10 +1,13 @@
-const Greeting = () => {
-    const name = "Kawanser"
-    return (
-        <div>
-            <h1>Hi, {name}! Today is:</h1>
-            <p>{Date()}</p>
-        </div>
+import React from 'react'
+
+const Morning = () => <h1>Good Morning! 🌞</h1>
+const Afternoon = () => <h1>Good Afternoon! 🍵</h1>
+
+const Greeting = ({timeOfDay}) => {
+    return timeOfDay === "morning" ? (
+        <Morning/>
+    ) : (
+        <Afternoon/>
     )
 }
 

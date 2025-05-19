@@ -1,23 +1,24 @@
 import React from 'react'
-import Card from './components/Card';
-
+import Weather from './components/Weather';
+import UserStatus from './components/UserStatus';
+import Greeting from './components/Greeting';
 
 const App = () => {
 
   return (
     <>
-      <Card>
-        <h1>React Developer</h1>
-        <h2>Proficient in React and React Native.</h2>
-      </Card>
-      <Card>
-        <h1>Game Developer</h1>
-        <h2>Proficient in Unity Game Engine and C# Scripting.</h2>
-      </Card>
-      <Card>
-        <h1>Human</h1>
-        <h2>Proficient in eating and sleeping.</h2>
-      </Card>
+      <Weather temperature={12}/>
+      <Weather temperature={20}/>
+      <Weather temperature={31}/>
+
+      <UserStatus isAdmin={true} loggedIn={true}/>
+      <UserStatus isAdmin={false} loggedIn={true}/>
+      <UserStatus isAdmin={false} loggedIn={true}/>
+      <UserStatus isAdmin={true} loggedIn={true}/>
+      <UserStatus isAdmin={false} loggedIn={true}/>
+
+      <Greeting timeOfDay={"morning"} />
+      <Greeting timeOfDay={"afternoon"} />
     </>
   )
 }
