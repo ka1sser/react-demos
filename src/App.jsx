@@ -1,13 +1,14 @@
 import React from 'react'
-import UserList from './components/UserList';
-import ProductInfo from './components/ProductInfo';
+import Person from './components/Person';
+import Product from './components/Product';
+
 
 const App = () => {
 
   return (
     <>
-      <UserList/>
-      <ProductInfo/>
+      <Person name="Kawanser" age={12} />
+      <Product prod_name="Scizor EX Special Illustration Rare" prod_price={50}/>
     </>
   )
 }
