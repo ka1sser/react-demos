@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import ComponentOne from './components/ComponentOne';
-import ComponentTwo from './components/ComponentTwo';
 import "./index.css";
+import ExampleTwo from './components/ExampleTwo';
+import ExampleOne from './components/ExampleOne';
+import ExampleThree from './components/ExampleThree';
 
 const App = () => {
 
@@ -10,8 +11,9 @@ const App = () => {
 
   return (
     <>
-      <ComponentOne count={count} onClickHandler={() => setCount(count+1)}/>
-      <ComponentTwo count={count} onClickHandler={() => setCount(count+1)}/>
+      <ExampleOne />
+      <ExampleTwo/>
+      <ExampleThree />
     </>
   )
 }
