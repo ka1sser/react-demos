@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import "./index.css";
-import ExampleTwo from './components/ExampleTwo';
-import ExampleOne from './components/ExampleOne';
-import ExampleThree from './components/ExampleThree';
+import Counter from './components/Counter';
+import ToDoList from './components/ToDoList';
+import Profile from './components/Profile';
 
 const App = () => {
 
@@ -11,9 +11,9 @@ const App = () => {
 
   return (
     <>
-      <ExampleOne />
-      <ExampleTwo/>
-      <ExampleThree />
+      <Counter/>
+      <ToDoList />
+      <Profile/>
     </>
   )
 }
