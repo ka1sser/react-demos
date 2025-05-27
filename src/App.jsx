@@ -1,9 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import "./index.css";
-import Counter from './components/Counter';
-import ToDoList from './components/ToDoList';
-import Profile from './components/Profile';
+import CopyContent from './components/CopyContent';
 
 const App = () => {
 
@@ -11,9 +9,7 @@ const App = () => {
 
   return (
     <>
-      <Counter/>
-      <ToDoList />
-      <Profile/>
+      <CopyContent/>
     </>
   )
 }
