@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+button{
+    @apply font-bold py-1 px-2 rounded mx-1 my-1 bg-blue-500 text-white hover:bg-blue-700;
+}
+
+h2{
+    @apply text-xl;
+}
