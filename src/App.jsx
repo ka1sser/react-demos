@@ -3,20 +3,32 @@ import { useState, useEffect } from 'react';
 import "./index.css";
 
 const App = () => {
+  const [data, setData] = useState([])
 
-  const [value, setValue] = useState(0);
+  useEffect(()=>{
+    async function getData() {
+      const response = await fetch("https://jsonplaceholder.typicode.com/posts")
+      const data = await response.json()
 
-  useEffect(() => {
-    if (value > 0) {
-      console.log("Called useEffect()")
-      document.title = `Increment ${value}`
+      if (data && data.length){
+        setData(data)
+      }
     }
-  },[value]);
+
+    getData();
+  },[]);
 
   return (
     <div>
-      <h2>{value}</h2>
-      <button onClick={()=> setValue(value+1)}>Click Me</button>
+      <ul>
+        {data.map(todo => (
+          <section>
+            <li key={todo.id}>Title: {todo.title}</li>
+            <li key={todo.id}>Body: {todo.body}</li>
+            <br/>
+          </section>
+        ))}
+      </ul>
     </div>
   )
 }
