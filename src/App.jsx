@@ -1,36 +1,17 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React from "react";
 import "./index.css";
+import BasicEffect from "./components/BasicEffect";
+import CounterEffect from "./components/CounterEffect";
+import FetchDataEffect from "./components/FetchDataEffect";
 
 const App = () => {
-  const [data, setData] = useState([])
-
-  useEffect(()=>{
-    async function getData() {
-      const response = await fetch("https://jsonplaceholder.typicode.com/posts")
-      const data = await response.json()
-
-      if (data && data.length){
-        setData(data)
-      }
-    }
-
-    getData();
-  },[]);
-
   return (
     <div>
-      <ul>
-        {data.map(todo => (
-          <section>
-            <li key={todo.id}>Title: {todo.title}</li>
-            <li key={todo.id}>Body: {todo.body}</li>
-            <br/>
-          </section>
-        ))}
-      </ul>
+      <BasicEffect/>
+      <CounterEffect/>
+      <FetchDataEffect/>
     </div>
-  )
-}
+  );
+};
 
 export default App;
