@@ -1,24 +1,36 @@
-import { useState } from "react";
+import {useReducer, useState} from 'react';
+import reducer from './counterReducer';
+
+const initialState = {count:0};
 
 const Counter = () => {
 
-    const [count, setCount] = useState(0)
+    const [state, dispatch] = useReducer(reducer, initialState)
+    const [input, setInput] = useState("")
 
-    const increment = () => {
-        setCount(prevCount => prevCount + 1)
-    }
-    
-    const decrement = () => {
-        setCount(prevCount => prevCount- 1)
+    const handleChange = (e) => {
+        setInput(e.target.value)
     }
 
-    return (
+    const handleClick = () => {
+        dispatch({type:"custom", payload: Number(input)})
+        setInput("")
+    }
+
+    return(
         <div>
-            <h1>Count: {count}</h1>
-            <button onClick={increment} className="bg-gray-400 px-1 mx-1">+</button>
-            <button onClick={decrement} className="bg-gray-400 px-1 mx-1">-</button>
+            <h1>Count: {state.count}</h1>
+            <button onClick={() => dispatch({type:"increment"})}>+</button>
+            <button onClick={() => dispatch({type:"decrement"})}>-</button>
+            <button onClick={() => dispatch({type:"addTen"})}>+10</button>
+            <button onClick={() => dispatch({type:"minusTen"})}>-10</button>
+            <button onClick={() => dispatch({type:"reset"})}>RESET</button>
+            <br/>
+            <p>Enter a number:</p>
+            <input type='number' value={input} onChange={handleChange}/>
+            <button onClick={handleClick}>GO</button>
         </div>
-    );
+    )
 }
 
 export default Counter;
